@@ -1,2 +1,2 @@
 # CoC
-App Geston de partidas CoC
+App Gestion de partidas CoC
