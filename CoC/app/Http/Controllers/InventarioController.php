@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreInventarioRequest;
-use App\Http\Requests\UpdateInventarioRequest;
 use App\Models\Inventario;
+use Illuminate\Http\Request;
 
 class InventarioController extends Controller
 {
@@ -16,7 +15,7 @@ class InventarioController extends Controller
         {
             $inventarios = Inventario::with('objetos')->get();
 
-            return view('inventario.index', compact('inventarios'));
+            return view('inventarios.index', compact('inventarios'));
         }
 
     /**
@@ -24,15 +23,16 @@ class InventarioController extends Controller
      */
     public function create()
     {
-        //
+        return view('inventarios.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreInventarioRequest $request)
+    public function store(Request $request)
     {
-        //
+        Inventario::create(['id_jugador' => $request->id_jugador]);
+        return redirect()->route('inventarios.index');
     }
 
     /**
@@ -48,15 +48,16 @@ class InventarioController extends Controller
      */
     public function edit(Inventario $inventario)
     {
-        //
+        return view('inventarios.edit', ['inventario'=>$inventario]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateInventarioRequest $request, Inventario $inventario)
+    public function update(Request $request, Inventario $inventario)
     {
-        //
+        $inventario->update(['id_jugador'=>$request->id_jugador]);
+        return redirect()->route('inventarios.index');
     }
 
     /**
@@ -64,6 +65,7 @@ class InventarioController extends Controller
      */
     public function destroy(Inventario $inventario)
     {
-        //
+        Inventario::destroy($inventario->id);
+        return redirect()->route('inventarios.index');
     }
 }

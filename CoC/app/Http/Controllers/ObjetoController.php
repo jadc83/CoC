@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreObjetoRequest;
-use App\Http\Requests\UpdateObjetoRequest;
 use App\Models\Objeto;
+use Illuminate\Http\Request;
 
 class ObjetoController extends Controller
 {
@@ -13,7 +12,9 @@ class ObjetoController extends Controller
      */
     public function index()
     {
-        //
+        $objetos = Objeto::all();
+
+        return view('objetos.index', compact('objetos'));
     }
 
     /**
@@ -27,7 +28,7 @@ class ObjetoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreObjetoRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -51,7 +52,7 @@ class ObjetoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateObjetoRequest $request, Objeto $objeto)
+    public function update(Request $request, Objeto $objeto)
     {
         //
     }
@@ -63,4 +64,18 @@ class ObjetoController extends Controller
     {
         //
     }
+
+    public function search(Request $request){
+        // Get the search value from the request
+        $search = $request->input('search');
+
+        // Search in the title and body columns from the posts table
+        $objetos = Objeto::query()
+            ->where('denominacion', 'LIKE', "%{$search}%")
+            ->get();
+
+        // Return the search view with the resluts compacted
+        return view('objetos.search', compact('objetos'));
+    }
+
 }
