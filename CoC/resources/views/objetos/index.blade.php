@@ -5,20 +5,19 @@
 
 @section('content')
 
-<form action="{{ route('search') }}" method="GET">
-    <input type="text" name="search" required/>
-    <button type="submit">Buscar</button>
-</form>
-
-<div class='rounded-xl bg-gray-200'>
-    <ul class='mt-4'>
+    <ol class='mt-4 border-8 back'>
         @foreach ($objetos as $objeto)
-            <li class="p-2 h-auto flex items-center justify-between">
-                <span>id {{ $objeto->id }}  {{ $objeto->denominacion }}</span>
+            <li class="p-4 h-auto flex items-center justify-between text-white bg-gradient-to-r from-gray-500 to-green-500">
+                <span>{{ $objeto->id }}  {{ $objeto->denominacion }}</span>
             </li>
         @endforeach
-    </ul>
-</div>
+    </ol>
+
+    <div class="d-flex justify-content-center mt-4">
+        {{ $objetos->links('pagination::bootstrap-4') }}
+    </div>
+
+
 
 
 @endsection

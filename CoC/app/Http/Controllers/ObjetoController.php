@@ -12,7 +12,7 @@ class ObjetoController extends Controller
      */
     public function index()
     {
-        $objetos = Objeto::all();
+        $objetos = Objeto::paginate(10);
 
         return view('objetos.index', compact('objetos'));
     }
