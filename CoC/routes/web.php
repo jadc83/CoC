@@ -22,13 +22,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// La ruta para 'show' está incluida automáticamente con Route::resource
-
 Route::get('/inventarios', [InventarioController::class, 'index']);
+Route::get('/inventarios', [InventarioController::class, 'index'])->name('inventarios.index');
 Route::get('/objetos', [ObjetoController::class, 'index']);
+Route::get('/objetos', [ObjetoController::class, 'index'])->name('objetos.index');
 Route::get('/search', [ObjetoController::class, 'search'])->name('search');
-
-
-
 
 require __DIR__.'/auth.php';
