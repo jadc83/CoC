@@ -16,3 +16,10 @@
 .font-sans {
     background-color: red;
 }
+
+body {
+    background: #251c27;
+    color: #251c27;
+    font-family: Arial, sans-serif;
+  }
+

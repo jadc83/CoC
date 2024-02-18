@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\HabilidadController;
 use App\Http\Controllers\ObjetoController;
 use App\Http\Controllers\InventarioController;
+use App\Http\Controllers\PersonajeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -11,6 +13,8 @@ Route::get('/', function () {
 
 Route::resource('inventarios', InventarioController::class);
 Route::resource('objetos', ObjetoController::class);
+Route::resource('personajes', PersonajeController::class);
+Route::resource('habilidades', HabilidadController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -22,10 +26,5 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/inventarios', [InventarioController::class, 'index']);
-Route::get('/inventarios', [InventarioController::class, 'index'])->name('inventarios.index');
-Route::get('/objetos', [ObjetoController::class, 'index']);
-Route::get('/objetos', [ObjetoController::class, 'index'])->name('objetos.index');
 Route::get('/search', [ObjetoController::class, 'search'])->name('search');
-
 require __DIR__.'/auth.php';

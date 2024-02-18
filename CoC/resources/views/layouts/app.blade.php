@@ -27,8 +27,9 @@
                 </header>
             @endif
 
+
             <!-- Page Content -->
-            <main class="flex justify-center">
+            <main class="flex w-3/5 justify-center">
                 <div>
                     @yield('content')
                 </div>

@@ -13,17 +13,17 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex text-white text-3xl">
-                    <x-nav-link :href="route('inventarios.index')" :active="request()->routeIs('inventarios.index')">
+                    <x-nav-link :href="route('personajes.index')" :active="request()->routeIs('personajes.index')">
                         {{ __('Jugadores') }}
                     </x-nav-link>
                     <x-nav-link :href="route('objetos.index')" :active="request()->routeIs('objetos.index')">
                         {{ __('Objetos') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('objetos.index')" :active="request()->routeIs('objetos.index')">
-                        {{ __('Indumentaria') }}
+                    <x-nav-link :href="route('inventarios.index')" :active="request()->routeIs('inventarios.index')">
+                        {{ __('Inventarios') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('objetos.index')" :active="request()->routeIs('objetos.index')">
-                        {{ __('Armas') }}
+                    <x-nav-link :href="route('habilidades.index')" :active="request()->routeIs('habilidades.index')">
+                        {{ __('Habilidades') }}
                     </x-nav-link>
                               <div class="ml-96 align-items-center justify-content-center vh-50">
                     <x-nav-link class="mt-6">
