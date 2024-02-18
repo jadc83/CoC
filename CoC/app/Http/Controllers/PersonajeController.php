@@ -13,7 +13,9 @@ class PersonajeController extends Controller
      */
     public function index()
     {
-        //
+        $personajes = Personaje::paginate(10);
+
+        return view('personajes.index', compact('personajes'));
     }
 
     /**

@@ -12,17 +12,7 @@
     @foreach ($inventarios as $inventario)
         <li class="m-4 w-full justify-center shadow-2xl p-8 rounded-xl text-white bg-gradient-to-r from-gray-300 to-green-200">
             <p class="text-black p-2 text-2xl text-center">{{ $inventario->personaje->nombre}} </p>
-            <p class="text-black p-2 text-xl text-center">Vida: {{ $inventario->personaje->HP}} Magia: {{ $inventario->personaje->MP}}</p>
-            <ul>
-                <li>FUE: {{ $inventario->personaje->FUE }}</li>
-                <li>CON:{{ $inventario->personaje->CON }}</li>
-                <li>TAM:{{ $inventario->personaje->TAM }}</li>
-                <li>DES:{{ $inventario->personaje->DES }}</li>
-                <li>APA:{{ $inventario->personaje->APA }}</li>
-                <li>INT:{{ $inventario->personaje->INT }}</li>
-                <li>POD:{{ $inventario->personaje->POD }}</li>
-                <li>EDU: {{ $inventario->personaje->EDU }}</li>
-            </ul><br>
+
             <p class="text-black p-1 text-xl text-center">Inventario:</p>
             <ul>
                 @foreach ($inventario->objetos as $objeto)
