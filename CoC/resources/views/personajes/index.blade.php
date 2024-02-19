@@ -7,7 +7,7 @@
 
 <ul class="flex">
     @foreach ($personajes as $personaje)
-        <li class="m-4 w-96 justify-center shadow-2xl p-8 rounded-xl text-white bg-cyan-700">
+        <li class="m-4 w-96 justify-center border-2 shadow-2xl p-8 text-white bg-cyan-700">
             <p class="text-black p-2 text-2xl text-center">{{$personaje->nombre}}</p>
             <p class="text-black p-2 text-xl text-center">Hp: <span class="text-white">{{ $personaje->HP}}</span> Mp:<span class="text-white">{{ $personaje->MP}}</span></p>
             <ul>

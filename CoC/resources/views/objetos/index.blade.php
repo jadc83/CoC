@@ -12,7 +12,7 @@
 </div>
 
 
-    <ol class='mt-4 border-8 back'>
+    <ol class='mt-4 border-2'>
         @foreach ($objetos as $objeto)
             <li class="p-4 h-auto flex items-center justify-between text-white  bg-cyan-700 ">
                 <span>{{ $objeto->id }}  {{ $objeto->denominacion }}</span>

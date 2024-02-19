@@ -13,7 +13,7 @@
     @endforeach
 </ul>
 
-<a class=" bg-cyan-700  mt-16 p-4 rounded-2xl" href="{{ route('objetos.index') }}" class="btn btn-primary">Volver al índice</a>
+<a class=" bg-cyan-700  mt-16 p-4 rounded-2xl" href="{{ route('habilidades.index') }}" class="btn btn-primary">Volver al índice</a>
 
 
 @endsection
