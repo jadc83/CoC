@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
+<body class="bg-cyan-700">
     <form action="{{route("habilidades.store")}}" method="POST">
         @csrf
 

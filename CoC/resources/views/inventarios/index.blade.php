@@ -10,7 +10,7 @@
 
 <ul class="flex">
     @foreach ($inventarios as $inventario)
-        <li class="m-4 w-full justify-center shadow-2xl p-8 rounded-xl text-white bg-gradient-to-r from-gray-300 to-green-200">
+        <li class="m-4 w-full justify-center shadow-2xl p-8 rounded-xl text-white  bg-cyan-700 ">
             <p class="text-black p-2 text-2xl text-center">{{ $inventario->personaje->nombre}} </p>
 
             <p class="text-black p-1 text-xl text-center">Inventario:</p>
