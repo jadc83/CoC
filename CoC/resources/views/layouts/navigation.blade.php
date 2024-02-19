@@ -26,12 +26,7 @@
                         {{ __('Habilidades') }}
                     </x-nav-link>
                               <div class="ml-96 align-items-center justify-content-center vh-50">
-                    <x-nav-link class="mt-6">
-                        <form action="{{ route('search') }}" method="GET" class="text-center">
-                            <input type="text" name="search" required/>
-                            <button class="text-white mt-2 text-xl" type="submit" class="btn btn-primary">Buscar</button>
-                        </form>
-                    </x-nav-link>
+
 
                 </div>
                 </div>

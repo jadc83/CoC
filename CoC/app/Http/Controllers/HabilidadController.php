@@ -82,4 +82,18 @@ class HabilidadController extends Controller
         Habilidad::destroy($habilidad->id);
         return redirect()->route('habilidades.index');
     }
-}
+
+    public function search(Request $request){
+        // Get the search value from the request
+        $search = $request->input('search');
+
+        // Search in the title and body columns from the posts table
+        $habilidades = Habilidad::query()
+            ->where('habilidad', 'LIKE', "%{$search}%")
+            ->orWhere('descripcion', 'LIKE', "%{$search}%")
+            ->get();
+
+        // Return the search view with the resluts compacted
+        return view('habilidades.search-habilidad', compact('habilidades'));
+    }
+};

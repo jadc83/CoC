@@ -26,5 +26,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/search', [ObjetoController::class, 'search'])->name('search');
+Route::get('/search-objeto', [ObjetoController::class, 'search'])->name('search.objeto');
+Route::get('/search-habilidad', [HabilidadController::class, 'search'])->name('search.habilidad');
 require __DIR__.'/auth.php';

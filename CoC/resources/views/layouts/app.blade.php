@@ -29,8 +29,8 @@
 
 
             <!-- Page Content -->
-            <main class="flex w-3/5 justify-center">
-                <div>
+            <main class="flex justify-center" style="background-image: url('fondo.jpg'); background-position: center; bottom: 0; height:45em">
+                <div class="h-196">
                     @yield('content')
                 </div>
             </main>

@@ -75,7 +75,7 @@ class ObjetoController extends Controller
             ->get();
 
         // Return the search view with the resluts compacted
-        return view('objetos.search', compact('objetos'));
+        return view('objetos.search-objeto', compact('objetos'));
     }
 
 }
