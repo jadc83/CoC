@@ -2,7 +2,6 @@
 
 @extends('layouts.app')
 
-
 @section('content')
 
 <ul class="flex">
@@ -19,10 +18,22 @@
                 <li>INT:{{ $personaje->INT }}</li>
                 <li>POD:{{ $personaje->POD }}</li>
                 <li>EDU: {{ $personaje->EDU }}</li>
+                <li class="mt-8">
+                    <form id="formularioImagen" action="{{ route('upload.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input accept="image/*" type="file" name="imagen" id="inputImagen" onchange="submitForm()" style="display: none;">
+                        <label for="inputImagen" class="cursor-pointer bg-blue-500 text-white px-4 py-2 rounded-md">Selecciona avatar</label>
+                    </form>
+                    <script>
+                        function submitForm() {
+                            // Envía el formulario al seleccionar una imagen
+                            document.getElementById('formularioImagen').submit();
+                        }
+                    </script>
+                </li>
             </ul>
         </li>
     @endforeach
-
 </ul>
 
 @endsection

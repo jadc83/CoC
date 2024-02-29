@@ -26,9 +26,5 @@
                 {{ $slot }}
             </div>
         </div>
-        <input type="checkbox" id="animation" />
-<label style="color:#fff" for="animation">Show animation</label>
-
-<div class="match" role="img" aria-label="A drawing of a match burning"></div>
     </body>
 </html>

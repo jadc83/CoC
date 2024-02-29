@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreInventario_objetoRequest;
-use App\Http\Requests\UpdateInventario_objetoRequest;
-use App\Models\Inventario_objeto;
+use App\Models\Mochila;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class InventarioObjetoController extends Controller
+class MochilaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $mochilas = Mochila::all();
+        return view("mochilas.index", ["mochilas"=>$mochilas]);
     }
 
     /**
@@ -27,7 +28,7 @@ class InventarioObjetoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreInventario_objetoRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class InventarioObjetoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Inventario_objeto $inventario_objeto)
+    public function show(Mochila $mochila)
     {
         //
     }
@@ -43,7 +44,7 @@ class InventarioObjetoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Inventario_objeto $inventario_objeto)
+    public function edit(Mochila $mochila)
     {
         //
     }
@@ -51,7 +52,7 @@ class InventarioObjetoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateInventario_objetoRequest $request, Inventario_objeto $inventario_objeto)
+    public function update(Request $request, Mochila $mochila)
     {
         //
     }
@@ -59,8 +60,13 @@ class InventarioObjetoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Inventario_objeto $inventario_objeto)
+    public function destroy(Mochila $mochila)
     {
-        //
+        DB::table('mochilas')->where('id', '=', $mochila->id)->delete();
+        return redirect()->route('mochilas.index')->with('success', 'Elemento eliminado exitosamente.');
+
+
     }
+
+
 }

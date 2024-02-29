@@ -25,10 +25,9 @@
                     <x-nav-link :href="route('habilidades.index')" :active="request()->routeIs('habilidades.index')">
                         {{ __('Habilidades') }}
                     </x-nav-link>
-                              <div class="ml-96 align-items-center justify-content-center vh-50">
-
-
-                </div>
+                    <x-nav-link :href="route('mochilas.index')" :active="request()->routeIs('mochilas.index')">
+                        {{ __('Mochilas') }}
+                    </x-nav-link>
                 </div>
             </div>
 

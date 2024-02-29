@@ -14,6 +14,6 @@ class Inventario extends Model
     }
 
     public function objetos(){
-        return $this->belongsToMany(Objeto::class, 'inventario_objetos')->withPivot('cantidad');;
+        return $this->belongsToMany(Objeto::class, 'mochilas')->withPivot('cantidad');;
     }
 }

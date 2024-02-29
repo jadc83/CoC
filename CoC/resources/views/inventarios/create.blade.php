@@ -10,7 +10,7 @@
     <form action="{{ route('inventarios.store') }}" method="post">
         @csrf
         <label for="id_jugador">ID del Jugador</label>
-        <input type="text" id="id_jugador" name="id_jugador">
+        <input type="text" id="id_jugador" name="id_jugador" required>
 
         <button type="submit">Añadir</button>
     </form>
