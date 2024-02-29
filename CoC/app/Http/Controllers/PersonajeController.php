@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePersonajeRequest;
 use App\Http\Requests\UpdatePersonajeRequest;
 use App\Models\Personaje;
+use Illuminate\Http\Request;
 
 class PersonajeController extends Controller
 {
@@ -64,5 +65,19 @@ class PersonajeController extends Controller
     public function destroy(Personaje $personaje)
     {
         //
+    }
+
+    public function updateStat(Request $request)
+    {
+        $personajeId = $request->input('personajeId');
+        $stat = $request->input('stat');
+        $amount = $request->input('amount');
+
+        // Lógica para actualizar la estadística aquí
+        $personaje = Personaje::find($personajeId);
+        $personaje->$stat += $amount;
+        $personaje->save();
+
+        return response()->json(['newValue' => $personaje->$stat]);
     }
 }

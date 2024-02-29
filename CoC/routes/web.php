@@ -35,6 +35,10 @@ Route::get('/upload', [UploadController::class, 'index'])->name('upload.index');
 Route::post('/upload', [UploadController::class, 'store'])->name('upload.store');
 
 
+Route::post('/update-stat', [PersonajeController::class, 'updateStat'])->name('update-stat');
+
+
 Route::delete('/mochilas/{id}', 'MochilaController@destroy');
+
 
 require __DIR__.'/auth.php';

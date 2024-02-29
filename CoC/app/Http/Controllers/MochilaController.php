@@ -22,7 +22,7 @@ class MochilaController extends Controller
      */
     public function create()
     {
-        //
+        return view('mochilas.create');
     }
 
     /**
@@ -30,7 +30,17 @@ class MochilaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Crear una nueva instancia del modelo y asignar valores
+        $mochila = new Mochila();
+        $mochila->inventario_id = $request->inventario_id;
+        $mochila->objeto_id = $request->objeto_id;
+        $mochila->cantidad = $request->cantidad;
+
+        // Guardar en la base de datos
+        $mochila->save();
+
+        // Redirigir a la vista de detalles o a donde desees
+        return redirect()->route('mochilas.index', ['mochila' => $mochila->id]);
     }
 
     /**
@@ -63,7 +73,7 @@ class MochilaController extends Controller
     public function destroy(Mochila $mochila)
     {
         DB::table('mochilas')->where('id', '=', $mochila->id)->delete();
-        return redirect()->route('mochilas.index')->with('success', 'Elemento eliminado exitosamente.');
+        return redirect()->route('mochilas.index')->with('success', 'Se ha eliminado el objeto del inventario.');
 
 
     }

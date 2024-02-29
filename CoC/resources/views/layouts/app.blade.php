@@ -29,7 +29,7 @@
 
 
             <!-- Page Content -->
-            <main class="flex justify-center bg-repeat-y" style="background-image: url('fondo.jpg'); background-position: center; bottom: 0; height:45em;">
+            <main class="flex justify-center bg-repeat-y" style="background-image: url('fondo.jpg'); background-position: center; bottom: 0; height:;">
                 <div class="h-196">
                     @yield('content')
                 </div>
