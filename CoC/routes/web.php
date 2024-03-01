@@ -39,6 +39,9 @@ Route::post('/update-stat', [PersonajeController::class, 'updateStat'])->name('u
 
 
 Route::delete('/mochilas/{id}', 'MochilaController@destroy');
+Route::get('/inventario/detalles/{personajeId}', 'InventarioController@detalles');
+// En tu archivo de rutas web.php
+Route::get('/personajes/informacion/{personajeId}', 'PersonajeController@informacion');
 
 
 require __DIR__.'/auth.php';

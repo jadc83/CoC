@@ -68,4 +68,5 @@ class InventarioController extends Controller
         Inventario::destroy($inventario->id);
         return redirect()->route('inventarios.index');
     }
+
 }

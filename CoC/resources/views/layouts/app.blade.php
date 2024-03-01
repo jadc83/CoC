@@ -13,6 +13,8 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -29,8 +31,8 @@
 
 
             <!-- Page Content -->
-            <main class="flex justify-center bg-repeat-y" style="background-image: url('fondo.jpg'); background-position: center; bottom: 0; height:;">
-                <div class="h-196">
+            <main class="justify-center">
+                <div class="h-[192em] w-full bg-gradient-to-r from-teal-600 to-cyan-700">
                     @yield('content')
                 </div>
             </main>

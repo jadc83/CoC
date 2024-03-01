@@ -14,7 +14,7 @@ class PersonajeController extends Controller
      */
     public function index()
     {
-        $personajes = Personaje::paginate(10);
+        $personajes = Personaje::all();
 
         return view('personajes.index', compact('personajes'));
     }
@@ -80,4 +80,5 @@ class PersonajeController extends Controller
 
         return response()->json(['newValue' => $personaje->$stat]);
     }
+
 }
